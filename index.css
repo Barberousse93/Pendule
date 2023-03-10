@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pendule {
+
+    display: flex;
+    gap: 60px;
+    color: #fff;
+    /* -webkit-box-reflect: below 50px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.3))); */
+}
+
+.cercle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.cercleInt {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    /* z-index: 2; */
+}
+
+.cercle div {
+    font-size: 80px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    /* z-index: 3; */
+}
+
+/* .cercle span {
+    box-shadow: 0 0 20px var(--clr);
+} */
+
+.cercle span:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--clr);
+    left: -7px;
+    top: -7px;
+    box-shadow: 0 0 15px var(--clr), 0 0 20px #fff;
+    /* z-index: 10; */
+}
+
+.cercle .h_hand {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 279px;
+    height: 100px;
+    width: 10px;
+    /* background-color: var(--clr); */
+    /* z-index: 3; */
+    transform-origin: bottom;
+    /* animation: rotation 4s infinite; */
+}
+
+.cercle .m_hand {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 279px;
+    height: 100px;
+    width: 10px;
+    /* background-color: var(--clr); */
+    /* z-index: 3; */
+    transform-origin: bottom;
+    /* animation: rotation 4s infinite; */
+}
+
+.cercle .s_hand {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 279px;
+    height: 100px;
+    width: 10px;
+    /* background-color: var(--clr); */
+    /* z-index: 3; */
+    transform-origin: bottom;
+    /* animation: rotation 4s infinite; */
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
