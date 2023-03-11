@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    overflow: hidden;
+}
+
+.text {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+}
+
+.text span {
+    position: relative;
+    display: inline-block;
+}
+
+.text span.smoke {
+    animation: smoke 2s linear forwards
+}
+
+@keyframes smoke {
+    0% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateX(400px) translateY(-300px) scale(4) rotate(720deg);
+    }
+}
