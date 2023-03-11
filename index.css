@@ -6,8 +6,9 @@
 }
 
 body {
+    margin: auto;
     height: 100vh;
-    width: 100%;
+    max-width: 1024px;
     background-color: #333;
     display: flex;
     align-items: center;
@@ -15,11 +16,12 @@ body {
 }
 
 #pendule {
-
+    height: 220px;
     display: flex;
     gap: 60px;
     color: #fff;
-    /* -webkit-box-reflect: below 50px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.3))); */
+    transform: skewY(-10deg);
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.3)));
 }
 
 .cercle {
@@ -33,6 +35,7 @@ body {
 }
 
 .cercleInt {
+    position: absolute;
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -40,19 +43,14 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #333;
-    /* z-index: 2; */
 }
 
 .cercle div {
     font-size: 80px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    /* z-index: 3; */
 }
 
-/* .cercle span {
-    box-shadow: 0 0 20px var(--clr);
-} */
-
+/* Marqueurs */
 .cercle span:before {
     content: '';
     display: block;
@@ -64,54 +62,47 @@ body {
     left: -7px;
     top: -7px;
     box-shadow: 0 0 15px var(--clr), 0 0 20px #fff;
-    /* z-index: 10; */
 }
 
+/* Aiguille heures (non visible) */
 .cercle .h_hand {
     content: '';
-    position: absolute;
+    position: relative;
     display: block;
-    top: 279px;
+    top: -50px;
     height: 100px;
     width: 10px;
-    /* background-color: var(--clr); */
-    /* z-index: 3; */
+    z-index: 2;
     transform-origin: bottom;
-    /* animation: rotation 4s infinite; */
 }
 
+/* Aiguille minutes (non visible) */
 .cercle .m_hand {
     content: '';
-    position: absolute;
+    position: relative;
     display: block;
-    top: 279px;
+    top: -50px;
     height: 100px;
     width: 10px;
-    /* background-color: var(--clr); */
-    /* z-index: 3; */
+    z-index: 3;
     transform-origin: bottom;
-    /* animation: rotation 4s infinite; */
 }
 
+/* Aiguille secondes (non visible) */
 .cercle .s_hand {
     content: '';
-    position: absolute;
+    position: relative;
     display: block;
-    top: 279px;
+    top: -50px;
     height: 100px;
     width: 10px;
-    /* background-color: var(--clr); */
-    /* z-index: 3; */
+    z-index: 3;
     transform-origin: bottom;
-    /* animation: rotation 4s infinite; */
 }
 
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(360deg);
+@media (width < 750px) {
+    .pendule {
+        display: flex;
+        flex-direction: column;
     }
 }
